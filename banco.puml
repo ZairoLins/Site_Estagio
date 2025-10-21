@@ -1,0 +1,52 @@
+@startuml
+!theme plain
+
+entity "Usuario (Administrador)" as usuario {
+  *id : BIGSERIAL <<PK>>
+  --
+  nome : VARCHAR(100)
+  email : VARCHAR(100)
+  senha : VARCHAR(255)
+}
+
+entity "Postagem" as postagem {
+  *id : BIGSERIAL <<PK>>
+  --
+  titulo : VARCHAR(150)
+  resumo : TEXT
+  conteudo : TEXT
+  imagem_url : VARCHAR(255)
+  data_publicacao : DATE
+  usuario_id : BIGINT <<FK>>
+}
+
+' === RELACIONAMENTO ===
+usuario ||--o{ postagem : "cria"
+
+@enduml
+@startuml
+!theme plain
+
+entity "Usuario (Administrador)" as usuario {
+  *id : BIGSERIAL <<PK>>
+  --
+  nome : VARCHAR(100)
+  email : VARCHAR(100)
+  senha : VARCHAR(255)
+}
+
+entity "Postagem" as postagem {
+  *id : BIGSERIAL <<PK>>
+  --
+  titulo : VARCHAR(150)
+  resumo : TEXT
+  conteudo : TEXT
+  imagem_url : VARCHAR(255)
+  data_publicacao : DATE
+  usuario_id : BIGINT <<FK>>
+}
+
+' === RELACIONAMENTO ===
+usuario ||--o{ postagem : "cria"
+
+@enduml
